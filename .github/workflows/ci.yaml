@@ -39,14 +39,14 @@ jobs:
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
           fetch-depth: 0
 
       - name: Determine changed files
         id: changed-files
-        uses: tj-actions/changed-files@9426d40962ed5378910ee2e21d5f8c6fcbf2dd96 # v47.0.6
+        uses: tj-actions/changed-files@v47.0.6
         with:
           files_yaml: |
             github_actions:
@@ -84,12 +84,12 @@ jobs:
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
 
       - name: Install uv
-        uses: astral-sh/setup-uv@18d369b23da25a81e9458561248e1aafff6a70fa # v10.3.1
+        uses: astral-sh/setup-uv@v10.3.1
         with:
           version: '0.13.4'
           enable-cache: false
@@ -119,12 +119,12 @@ jobs:
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
 
       - name: Audit with zizmor
-        uses: zizmorcore/zizmor-action@85b2b9fb8e3325e7a23d7d0a9d7ba5ae0f999e3e # v0.7.1
+        uses: zizmorcore/zizmor-action@v0.8.1
         with:
           version: 'v1.31.1'
           advanced-security: false
@@ -135,7 +135,7 @@ jobs:
           always()
           && github.event_name == 'push'
           && github.event.repository.private == false
-        uses: zizmorcore/zizmor-action@85b2b9fb8e3325e7a23d7d0a9d7ba5ae0f999e3e # v0.7.1
+        uses: zizmorcore/zizmor-action@v0.8.1
         with:
           version: 'v1.31.1'
           advanced-security: true
@@ -154,12 +154,12 @@ jobs:
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
 
       - name: Install Tombi
-        uses: tombi-toml/setup-tombi@dbb85e6c7616772f590af0db4a7c455dfe61fec7 # v1.8.9
+        uses: tombi-toml/setup-tombi@v1.8.9
         with:
           version: '1.8.9'
 
@@ -168,7 +168,7 @@ jobs:
 
       - name: Suggest TOML formatting
         if: github.event_name == 'pull_request'
-        uses: reviewdog/action-suggester@ac5ce6d94e35c00530447dc63c271e38e4fd36c6 # v1.26.3
+        uses: reviewdog/action-suggester@v1.26.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           tool_name: tombi-format
@@ -194,12 +194,12 @@ jobs:
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
 
       - name: Install Tombi
-        uses: tombi-toml/setup-tombi@dbb85e6c7616772f590af0db4a7c455dfe61fec7 # v1.8.9
+        uses: tombi-toml/setup-tombi@v1.8.9
         with:
           version: '1.8.9'
 
@@ -219,12 +219,12 @@ jobs:
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
 
       - name: Install uv
-        uses: astral-sh/setup-uv@18d369b23da25a81e9458561248e1aafff6a70fa # v10.3.1
+        uses: astral-sh/setup-uv@v10.3.1
         with:
           version: '0.13.4'
           enable-cache: false
@@ -249,12 +249,12 @@ jobs:
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
 
       - name: Lint Markdown
-        uses: rvben/rumdl@19006897519812a2fdc508314b34738e5c281233 # v0.3.0
+        uses: rvben/rumdl@v0.3.0
         with:
           version: '0.3.0'
           report-type: annotations
@@ -274,12 +274,12 @@ jobs:
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
 
       - name: Install uv
-        uses: astral-sh/setup-uv@18d369b23da25a81e9458561248e1aafff6a70fa # v10.3.1
+        uses: astral-sh/setup-uv@v10.3.1
         with:
           version: '0.13.4'
           enable-cache: false
@@ -292,7 +292,7 @@ jobs:
 
       - name: Suggest Python formatting
         if: github.event_name == 'pull_request'
-        uses: reviewdog/action-suggester@ac5ce6d94e35c00530447dc63c271e38e4fd36c6 # v1.26.3
+        uses: reviewdog/action-suggester@v1.26.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           tool_name: ruff-format
@@ -318,12 +318,12 @@ jobs:
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
 
       - name: Install uv
-        uses: astral-sh/setup-uv@18d369b23da25a81e9458561248e1aafff6a70fa # v10.3.1
+        uses: astral-sh/setup-uv@v10.3.1
         with:
           version: '0.13.4'
           enable-cache: false
@@ -347,12 +347,12 @@ jobs:
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
 
       - name: Install uv
-        uses: astral-sh/setup-uv@18d369b23da25a81e9458561248e1aafff6a70fa # v10.3.1
+        uses: astral-sh/setup-uv@v10.3.1
         with:
           version: '0.13.4'
           enable-cache: false
@@ -376,12 +376,12 @@ jobs:
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
 
       - name: Check spelling
-        uses: crate-ci/typos@7f9d0819ca1c008ade73f4b41fa9d258d48f605b # v1.51.1
+        uses: crate-ci/typos@v1.51.1
 
   lint-commit-messages:
     name: Lint commit messages
@@ -393,13 +393,13 @@ jobs:
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
           fetch-depth: 0
 
       - name: Install Commitizen
-        uses: commitizen-tools/setup-cz@96c75e6ae9632047f2c9b4025b9dd1624b40de8f # v0.9.1
+        uses: commitizen-tools/setup-cz@v0.9.1
         with:
           version: '4.19.2'
           python-version: '3.x'
@@ -432,12 +432,12 @@ jobs:
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
 
       - name: Run prek hooks
-        uses: j178/prek-action@af4d4fcb6922b8e6f65c0426947125fcc38794ce # v3.0.2
+        uses: j178/prek-action@v3.0.2
         with:
           prek-version: 'v0.5.7'
           extra-args: --skip=no-commit-to-branch --all-files
