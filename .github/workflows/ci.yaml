@@ -89,9 +89,9 @@ jobs:
           persist-credentials: false
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v10.3.1
+        uses: astral-sh/setup-uv@v10.3.3
         with:
-          version: '0.13.4'
+          version: '0.13.7'
           enable-cache: false
 
       - name: Lint GitHub Actions
@@ -159,7 +159,7 @@ jobs:
           persist-credentials: false
 
       - name: Install Tombi
-        uses: tombi-toml/setup-tombi@v1.8.9
+        uses: tombi-toml/setup-tombi@v1.11.0
         with:
           version: '1.8.9'
 
@@ -168,7 +168,7 @@ jobs:
 
       - name: Suggest TOML formatting
         if: github.event_name == 'pull_request'
-        uses: reviewdog/action-suggester@v1.26.3
+        uses: reviewdog/action-suggester@v1.27.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           tool_name: tombi-format
@@ -199,7 +199,7 @@ jobs:
           persist-credentials: false
 
       - name: Install Tombi
-        uses: tombi-toml/setup-tombi@v1.8.9
+        uses: tombi-toml/setup-tombi@v1.11.0
         with:
           version: '1.8.9'
 
@@ -224,9 +224,9 @@ jobs:
           persist-credentials: false
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v10.3.1
+        uses: astral-sh/setup-uv@v10.3.3
         with:
-          version: '0.13.4'
+          version: '0.13.7'
           enable-cache: false
 
       - name: Lint YAML
@@ -254,7 +254,7 @@ jobs:
           persist-credentials: false
 
       - name: Lint Markdown
-        uses: rvben/rumdl@v0.3.0
+        uses: rvben/rumdl@v0.3.2
         with:
           version: '0.3.0'
           report-type: annotations
@@ -279,9 +279,9 @@ jobs:
           persist-credentials: false
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v10.3.1
+        uses: astral-sh/setup-uv@v10.3.3
         with:
-          version: '0.13.4'
+          version: '0.13.7'
           enable-cache: false
 
       - name: Install Ruff
@@ -292,7 +292,7 @@ jobs:
 
       - name: Suggest Python formatting
         if: github.event_name == 'pull_request'
-        uses: reviewdog/action-suggester@v1.26.3
+        uses: reviewdog/action-suggester@v1.27.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           tool_name: ruff-format
@@ -323,9 +323,9 @@ jobs:
           persist-credentials: false
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v10.3.1
+        uses: astral-sh/setup-uv@v10.3.3
         with:
-          version: '0.13.4'
+          version: '0.13.7'
           enable-cache: false
 
       - name: Install Ruff
@@ -352,9 +352,9 @@ jobs:
           persist-credentials: false
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v10.3.1
+        uses: astral-sh/setup-uv@v10.3.3
         with:
-          version: '0.13.4'
+          version: '0.13.7'
           enable-cache: false
 
       - name: Install the project
@@ -381,7 +381,7 @@ jobs:
           persist-credentials: false
 
       - name: Check spelling
-        uses: crate-ci/typos@v1.51.1
+        uses: crate-ci/typos@v1.52.0
 
   lint-commit-messages:
     name: Lint commit messages
@@ -437,7 +437,7 @@ jobs:
           persist-credentials: false
 
       - name: Run prek hooks
-        uses: j178/prek-action@v3.0.2
+        uses: j178/prek-action@v3.1.0
         with:
-          prek-version: 'v0.5.7'
+          prek-version: 'v0.5.10'
           extra-args: --skip=no-commit-to-branch --all-files
